@@ -1,0 +1,78 @@
+.charity-list-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .charity-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .charity-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .charity-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .charity-item.selected {
+    background-color: #e0e0e0;
+  }
+  
+  .charity-items-container {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .charity-items-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .charity-item-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+  }
+  
+  .charity-item-card img {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .charity-item h3 {
+    margin: 0 0 10px;
+  }
+  
+  .charity-item p {
+    margin: 5px 0;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .directions-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .directions-button:hover {
+    background-color: #45a049;
+  }
+  

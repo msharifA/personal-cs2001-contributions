@@ -1,0 +1,58 @@
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    profile_picture VARCHAR(255),
+    address VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reset_token VARCHAR(255)
+);
+
+ALTER TABLE users ADD COLUMN co2savings DOUBLE DEFAULT 0;
+
+CREATE TABLE collection_schedule (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  donor_id BIGINT NOT NULL,
+  receiver_id BIGINT NOT NULL,
+  item_name VARCHAR(255),
+  location VARCHAR(255),
+  time TIMESTAMP,
+  status VARCHAR(50)
+);
+
+
+CREATE TABLE items (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    item_name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255),
+    user_id BIGINT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE reviews (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    rating INT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    comment VARCHAR(1000),
+    user_id BIGINT NOT NULL,
+    item_id BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (item_id) REFERENCES items(id)
+);
+
+CREATE TABLE user_follows (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    follower_id BIGINT NOT NULL,
+    followed_id BIGINT NOT NULL,
+    FOREIGN KEY (follower_id) REFERENCES users(id),
+    FOREIGN KEY (followed_id) REFERENCES users(id)
+);
+

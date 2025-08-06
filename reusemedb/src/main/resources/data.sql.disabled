@@ -1,0 +1,51 @@
+INSERT INTO users (id, email, password, name, surname, profile_picture, address, created_at, updated_at)
+VALUES
+ (1, 'Ballondor@example.com', '$2a$10$examplehash', 'Mohammed', 'Salah', '/images/profiles/user1-profile.jpg', 'London', NOW(), NOW()),
+ (2, 'k_Mbappe@example.com', '$2a$10$examplehash', 'Kylian', 'Mbappe', '/images/profiles/user2-profile.jpg', 'Manchester', NOW(), NOW());
+
+INSERT INTO users (id, email, password, name, surname, profile_picture, address, created_at, updated_at)
+VALUES
+ (10, 'john@example.com', 'pass1', 'John', 'Doe', '/images/profiles/john.jpg', 'NY, USA', NOW(), NOW()),
+ (11, 'jane@example.com', 'pass2', 'Jane', 'Smith', '/images/profiles/jane.jpg', 'London, UK', NOW(), NOW()),
+ (12, 'alex@example.com', 'pass3', 'Alex', 'Green', '/images/profiles/alex.jpg', 'Paris, FR', NOW(), NOW());
+
+INSERT INTO items (id, item_name, description, image_url, user_id)
+VALUES
+ (1, 'Vintage Chair', 'Comfortable vintage chair', '/images/items/chair1.jpg', 1),
+ (2, 'Old Books', 'Collection of classic novels', '/images/items/book1.jpg', 2);
+
+INSERT INTO items (id, item_name, description, image_url, user_id)
+VALUES
+ (100, 'Vintage Lamp', 'A nice vintage lamp.', '/images/items/lamp.jpg', 11),
+ (101, 'Modern Art Book', 'Coffee table art book.', '/images/items/artbook.jpg', 12);
+
+INSERT INTO user_follows (follower_id, followed_id) VALUES (10, 1);
+INSERT INTO user_follows (follower_id, followed_id) VALUES (10, 2);
+INSERT INTO user_follows (follower_id, followed_id) VALUES (10, 11);
+INSERT INTO user_follows (follower_id, followed_id) VALUES (10, 12);
+
+INSERT INTO user_follows (follower_id, followed_id) VALUES (2, 11);
+INSERT INTO user_follows (follower_id, followed_id) VALUES (2, 12);
+
+INSERT INTO reviews (id, rating, comment, user_id, item_id, created_at)
+VALUES
+ (10, 5, 'Great condition!', 2, 1, NOW()),
+ (11, 4, 'Nice collection', 1, 2, NOW());
+
+INSERT INTO reviews (id, rating, comment, user_id, item_id, created_at)
+VALUES
+ (12, 5, 'Incredible find!', 10, 1, NOW()),
+ (13, 3, 'Not my taste, but okay', 10, 2, NOW()),
+ (14, 5, 'Beautiful lamp!', 10, 100, NOW()),
+ (15, 4, 'Interesting art book', 10, 101, NOW());
+
+INSERT INTO reviews (id, rating, comment, user_id, item_id, created_at)
+VALUES
+ (16, 4, 'Solid design', 11, 1, NOW()),
+ (17, 5, 'Love these books', 11, 2, NOW());
+
+INSERT INTO reviews (id, rating, comment, user_id, item_id, created_at)
+VALUES
+ (18, 5, 'Vintage but perfect', 12, 1, NOW()),
+ (19, 2, 'Books were worn out', 12, 2, NOW()),
+ (20, 5, 'Great lamp you have, Jane!', 12, 100, NOW());

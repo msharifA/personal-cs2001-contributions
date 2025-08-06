@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+/* Navbar */
+
+
+
+.navbar a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.user-profile-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh; /* Ensure it takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: visible; /* Allow content to expand naturally */
+  padding-top: 250%; /* Push content below the navbar */
+  padding-bottom: 40px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+}
+
+.user-profile-details,
+.item-list-container,
+.favorite-items-container {
+  margin-bottom: 40px; /* Add spacing between sections */
+}
+
+/* Profile Section */
+.user-profile-details {
+  background-color: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-profile-details p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Buttons */
+.edit-button,
+.save-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover,
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sustainability Section */
+.sustainability-metrics {
+  background-color: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Badges */
+.badges-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.badges-section h2 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.badge {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+/* Add a scrollable area for the item list */
+.item-list-container,
+.favorite-items-container {
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the item list */
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 300px; /* Set a minimum height to prevent shifting */
+  overflow-y: auto; /* Allow scrolling if content exceeds the height */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure consistent spacing between items */
+.item-list-container .item {
+  margin-bottom: 20px;
+}
+
+/* Add a fixed height to prevent shifting */
+.item-list-container {
+  max-height: none; /* Remove height restrictions */
+  overflow-y: visible; /* Allow content to expand naturally */
+}
+
+/* Ensure consistent spacing between favorite items */
+.favorite-items-container .favorite-item {
+  margin-bottom: 20px;
+}
+
+/* Add a fixed height to prevent shifting */
+.favorite-items-container {
+  width: 100%;
+  max-width: 1200px; /* Limit the width */
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 300px; /* Set a minimum height to prevent shifting */
+  overflow-y: auto; /* Allow scrolling if content exceeds the height */
+  background-color: #fff; /* Optional: Add a background for better visibility */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Notifications */
+.notifications-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.notifications-section h2 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .edit-button,
+  .save-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .user-profile-container {
+    padding: 10px;
+  }
+
+  .item-list-container,
+  .favorite-items-container {
+    padding: 10px;
+  }
+
+  .favorite-items-container {
+    padding: 10px;
+    min-height: 200px; /* Adjust the minimum height for smaller screens */
+  }
+
+  .favorite-items-container .favorite-item {
+    margin-bottom: 10px; /* Reduce spacing between items */
+  }
+}

@@ -1,0 +1,96 @@
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.notification:hover {
+  background-color: #f5f5f5;
+}
+
+.notification-unread {
+  background-color: #edf7ff;
+}
+
+.notification-unread:hover {
+  background-color: #e1f1ff;
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.notification-badge {
+  background-color: #9c27b0;
+  position: relative;
+}
+
+.notification-badge::after {
+  content: '🏆';
+  font-size: 16px;
+}
+
+.notification-message {
+  background-color: #2196f3;
+  position: relative;
+}
+
+.notification-message::after {
+  content: '✉️';
+  font-size: 16px;
+}
+
+.notification-item {
+  background-color: #4caf50;
+  position: relative;
+}
+
+.notification-item::after {
+  content: '📦';
+  font-size: 16px;
+}
+
+.notification-default {
+  background-color: #ff9800;
+  position: relative;
+}
+
+.notification-default::after {
+  content: '🔔';
+  font-size: 16px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  margin: 0;
+  font-size: 14px;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+.notification-unread-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  margin-left: 16px;
+}
